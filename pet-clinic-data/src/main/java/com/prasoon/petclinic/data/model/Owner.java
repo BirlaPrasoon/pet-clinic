@@ -1,4 +1,4 @@
-package com.prasoon.petclinic.web.data.models;
+package com.prasoon.petclinic.data.model;
 
 public class Owner extends Person {
 

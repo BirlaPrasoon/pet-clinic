@@ -1,4 +1,6 @@
-package com.prasoon.petclinic.web.data.models;
+package com.prasoon.petclinic.data.model;
+
+import com.prasoon.petclinic.data.model.Person;
 
 public class Vet extends Person {
 

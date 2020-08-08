@@ -1,4 +1,4 @@
-package com.prasoon.petclinic.web.data.models;
+package com.prasoon.petclinic.data.model;
 
 import java.time.LocalDate;
 
