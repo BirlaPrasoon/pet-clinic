@@ -17,6 +17,8 @@
             <artifactId>pet-clinic-data</artifactId>
             <groupId>com.prasoon</groupId>
             <version>0.0.1-SNAPSHOT</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/../pet-clinic-data/target/pet-clinic-data-0.0.1-SNAPSHOT.jar</systemPath>-->
         </dependency>
 
         <dependency>
