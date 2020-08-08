@@ -1,5 +1,7 @@
 package com.prasoon.petclinic.data.services;
 
+import lombok.NonNull;
+
 import java.util.Set;
 
 public interface CrudService<T, ID> {
@@ -8,7 +10,7 @@ public interface CrudService<T, ID> {
 
     T findById(ID id);
 
-    T save(T object);
+    T save(@NonNull ID id, @NonNull T object);
 
     void deleteById(ID id);
 
