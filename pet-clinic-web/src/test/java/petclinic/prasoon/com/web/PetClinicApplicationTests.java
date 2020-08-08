@@ -1,4 +1,4 @@
-package com.prasoon.petclinic;
+package petclinic.prasoon.com.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
