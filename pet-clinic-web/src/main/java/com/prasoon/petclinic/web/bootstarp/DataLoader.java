@@ -1,7 +1,5 @@
 package com.prasoon.petclinic.web.bootstarp;
 
-import com.prasoon.petclinic.data.map.OwnerServiceMap;
-import com.prasoon.petclinic.data.map.VetServiceMap;
 import com.prasoon.petclinic.data.model.Owner;
 import com.prasoon.petclinic.data.model.Vet;
 import com.prasoon.petclinic.data.services.OwnerService;
@@ -15,9 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader (){
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
