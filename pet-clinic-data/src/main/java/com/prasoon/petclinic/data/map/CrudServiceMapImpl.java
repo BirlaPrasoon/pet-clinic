@@ -1,15 +1,17 @@
 package com.prasoon.petclinic.data.map;
 
+import com.prasoon.petclinic.data.model.BaseEntity;
 import com.prasoon.petclinic.data.services.CrudService;
 import lombok.NonNull;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class CrudServiceMapImpl<T, ID> implements CrudService<T, ID> {
+public abstract class CrudServiceMapImpl<T extends BaseEntity, ID extends Long> implements CrudService<T, ID> {
 
-    protected Map<ID, T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
 
     @Override
     public Collection<T> findAll() {
@@ -22,13 +24,25 @@ public abstract class CrudServiceMapImpl<T, ID> implements CrudService<T, ID> {
     }
 
     @Override
-    public T save(@NonNull ID id, @NonNull T object) {
-        return map.put(id, object);
+    public T save(@NonNull T object) {
+        if(object != null){
+            if(object.getId() == null){
+                object.setId(getNextId());
+            }
+            map.put(object.getId(),object);
+        } else{
+            throw new RuntimeException("Object can not be null");
+        }
+        return object;
     }
 
     @Override
     public void deleteById(ID id) {
         map.remove(id);
+    }
+
+    private Long getNextId() {
+        return Collections.max(map.keySet()) + 1;
     }
 
 }

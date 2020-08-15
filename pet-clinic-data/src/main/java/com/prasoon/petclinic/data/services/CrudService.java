@@ -10,7 +10,7 @@ public interface CrudService<T, ID> {
 
     T findById(ID id);
 
-    T save(@NonNull ID id, @NonNull T object);
+    T save(T object);
 
     void deleteById(ID id);
 

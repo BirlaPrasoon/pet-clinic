@@ -10,11 +10,8 @@ import java.util.stream.Collectors;
 @Service
 public class OwnerServiceMap extends CrudServiceMapImpl<Owner, Long> implements OwnerService {
 
-    @Override
-    public List<Owner> findByLastName(String lastName) {
-        return this.map
-                .values()
-                .parallelStream()
+    @Override public List<Owner> findByLastName(String lastName) {
+        return this.map.values().parallelStream()
                 .filter(owner -> owner.getLastName().equals(lastName))
                 .collect(Collectors.toList());
     }
