@@ -3,17 +3,17 @@ package com.prasoon.petclinic.data.map;
 import com.prasoon.petclinic.data.services.CrudService;
 import lombok.NonNull;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public abstract class CrudServiceMapImpl<T, ID> implements CrudService<T, ID> {
 
     protected Map<ID, T> map = new HashMap<>();
 
     @Override
-    public Set<T> findAll() {
-        return (Set<T>) this.map.values();
+    public Collection<T> findAll() {
+        return this.map.values();
     }
 
     @Override

@@ -2,11 +2,11 @@ package com.prasoon.petclinic.data.services;
 
 import lombok.NonNull;
 
-import java.util.Set;
+import java.util.Collection;
 
 public interface CrudService<T, ID> {
 
-    Set<T> findAll();
+    Collection<T> findAll();
 
     T findById(ID id);
 
