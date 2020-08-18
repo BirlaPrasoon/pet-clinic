@@ -47,4 +47,9 @@ public class Owner extends Person {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    @Override public String toString() {
+        return "Owner{" + "address='" + address + '\'' + ", city='" + city
+                + '\'' + ", telephone='" + telephone + '\'' + '}';
+    }
 }
