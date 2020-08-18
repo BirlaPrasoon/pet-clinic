@@ -1,4 +1,4 @@
-package com.prasoon.petclinic.data.map;
+package com.prasoon.petclinic.data.services.map;
 
 import com.prasoon.petclinic.data.model.Vet;
 import com.prasoon.petclinic.data.services.VetService;
