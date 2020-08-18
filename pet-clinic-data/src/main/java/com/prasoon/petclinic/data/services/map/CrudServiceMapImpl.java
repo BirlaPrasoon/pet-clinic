@@ -41,7 +41,7 @@ public abstract class CrudServiceMapImpl<T extends BaseEntity, ID extends Long> 
         map.remove(id);
     }
 
-    private Long getNextId() {
+    protected Long getNextId() {
         return Collections.max(map.keySet()) + 1;
     }
 
