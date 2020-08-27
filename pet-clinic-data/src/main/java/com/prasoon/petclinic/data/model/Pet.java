@@ -1,5 +1,6 @@
 package com.prasoon.petclinic.data.model;
 
+import lombok.*;
 import org.springframework.context.annotation.EnableMBeanExport;
 
 import javax.persistence.*;
@@ -9,6 +10,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "pet")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = {"visits", "petType","owner"})
+@EqualsAndHashCode(callSuper = true, exclude = {"visits", "petType", "owner"})
 public class Pet extends BaseEntity{
 
     @Column(name = "name")
@@ -28,48 +35,4 @@ public class Pet extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public Set<Visit> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(Set<Visit> visits) {
-        this.visits = visits;
-    }
-
-    @Override public String toString() {
-        return "Pet{" + "name='" + name + '\'' + ", birthDate=" + birthDate
-                + '}';
-    }
 }

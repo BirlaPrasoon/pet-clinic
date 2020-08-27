@@ -1,6 +1,7 @@
 package com.prasoon.petclinic.data.model;
 
 import com.prasoon.petclinic.data.model.Person;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,6 +9,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "vets")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString(exclude = "specialities")
+@EqualsAndHashCode(callSuper = true, exclude = "specialities")
 public class Vet extends Person {
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -20,15 +26,5 @@ public class Vet extends Person {
         this.specialities = new HashSet<>();
     }
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
-    }
 
-    public void setSpecialities(Set<Speciality> specialities) {
-        this.specialities = specialities;
-    }
-
-    @Override public String toString() {
-        return "Vet{" + "specialities=" + specialities + '}';
-    }
 }

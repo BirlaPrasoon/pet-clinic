@@ -1,10 +1,17 @@
 package com.prasoon.petclinic.data.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "visits")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString(exclude = "pet")
+@EqualsAndHashCode(callSuper = true, exclude = "pet")
 public class Visit extends BaseEntity {
 
     @Column(name = "date")
@@ -20,32 +27,4 @@ public class Visit extends BaseEntity {
         this.date = LocalDate.now();
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    @Override public String toString() {
-        return "Visit{" + "date=" + date + ", description='" + description
-                + '\'' + '}';
-    }
 }

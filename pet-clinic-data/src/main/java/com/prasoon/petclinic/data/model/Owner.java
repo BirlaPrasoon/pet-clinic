@@ -1,6 +1,6 @@
 package com.prasoon.petclinic.data.model;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,6 +8,11 @@ import java.util.Set;
 
 @Entity
 @Table(name="owners")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString(exclude = "pets")
+@EqualsAndHashCode(callSuper = true, exclude = "pets")
 public class Owner extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
@@ -26,40 +31,4 @@ public class Owner extends Person {
         this.pets = new HashSet<>();
     }
 
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    @Override public String toString() {
-        return "Owner{" + "address='" + address + '\'' + ", city='" + city
-                + '\'' + ", telephone='" + telephone + '\'' + '}';
-    }
 }

@@ -1,8 +1,17 @@
 package com.prasoon.petclinic.data.model;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+
 @MappedSuperclass
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class Person extends BaseEntity {
 
     @Column(name="first_name")
@@ -10,26 +19,4 @@ public class Person extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    public Person(){}
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Override public String toString() {
-        return "Person{" + "firstName='" + firstName + '\'' + ", lastName='"
-                + lastName + '\'' + '}';
-    }
 }
