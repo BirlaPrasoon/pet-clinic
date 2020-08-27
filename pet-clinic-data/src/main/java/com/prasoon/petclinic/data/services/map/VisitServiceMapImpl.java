@@ -1,9 +1,13 @@
 package com.prasoon.petclinic.data.services.map;
 
 import com.prasoon.petclinic.data.model.Visit;
+import com.prasoon.petclinic.data.services.VisitService;
 import lombok.NonNull;
+import org.springframework.stereotype.Service;
 
-public class VisitServiceMapImpl extends CrudServiceMapImpl<Visit, Long>{
+@Service
+public class VisitServiceMapImpl extends CrudServiceMapImpl<Visit, Long> implements
+        VisitService {
 
     @Override public Visit save(@NonNull Visit visit) {
         if (visit.getPet() == null || visit.getPet().getId() == null
