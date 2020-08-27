@@ -4,9 +4,11 @@ import com.prasoon.petclinic.data.model.Vet;
 import com.prasoon.petclinic.data.services.SpecialityService;
 import com.prasoon.petclinic.data.services.VetService;
 import lombok.NonNull;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends CrudServiceMapImpl<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;

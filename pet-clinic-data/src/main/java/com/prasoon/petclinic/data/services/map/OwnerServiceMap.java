@@ -6,12 +6,14 @@ import com.prasoon.petclinic.data.services.OwnerService;
 import com.prasoon.petclinic.data.services.PetService;
 import com.prasoon.petclinic.data.services.PetTypeService;
 import lombok.NonNull;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends CrudServiceMapImpl<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

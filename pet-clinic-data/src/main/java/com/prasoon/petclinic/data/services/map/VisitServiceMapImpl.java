@@ -3,9 +3,11 @@ package com.prasoon.petclinic.data.services.map;
 import com.prasoon.petclinic.data.model.Visit;
 import com.prasoon.petclinic.data.services.VisitService;
 import lombok.NonNull;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VisitServiceMapImpl extends CrudServiceMapImpl<Visit, Long> implements
         VisitService {
 
