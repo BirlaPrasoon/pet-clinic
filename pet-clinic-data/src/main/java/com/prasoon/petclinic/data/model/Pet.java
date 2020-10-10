@@ -1,7 +1,6 @@
 package com.prasoon.petclinic.data.model;
 
 import lombok.*;
-import org.springframework.context.annotation.EnableMBeanExport;
 
 import javax.persistence.*;
 import java.time.LocalDate;
