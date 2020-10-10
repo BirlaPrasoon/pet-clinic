@@ -35,7 +35,7 @@ class OwnerServiceMapTest {
         newOwner.setId(2L);
         newOwner.setFirstName("Prasoon");
         ownerServiceMap.save(newOwner);
-        assertEquals(3, ownerServiceMap.findAll().size());
+        assertEquals(2, ownerServiceMap.findAll().size());
     }
 
     @Test
